@@ -1,4 +1,4 @@
-CREATE TABLE public.evento (
+CREATE TABLE evento (
 	id integer NOT NULL,
 	nome varchar(200) NOT NULL,
 	data_inicial date NOT NULL,
@@ -7,10 +7,12 @@ CREATE TABLE public.evento (
 	CONSTRAINT evento_pk PRIMARY KEY (id)
 );
 
--- Column comments
+CREATE UNIQUE INDEX evento_id_idx ON evento (id);
+CREATE SEQUENCE eventoSequence START 1;
 
-COMMENT ON COLUMN public.evento.id IS 'Id';
-COMMENT ON COLUMN public.evento.nome IS 'Nome do evento';
-COMMENT ON COLUMN public.evento.data_inicial IS 'Data inicial';
-COMMENT ON COLUMN public.evento.data_final IS 'Data final';
-COMMENT ON COLUMN public.evento.ativo IS 'Situação do evento: ATIVO / INATIVO';
+-- Comentário das colunas
+COMMENT ON COLUMN evento.id IS 'Id';
+COMMENT ON COLUMN evento.nome IS 'Nome do evento';
+COMMENT ON COLUMN evento.data_inicial IS 'Data inicial';
+COMMENT ON COLUMN evento.data_final IS 'Data final';
+COMMENT ON COLUMN evento.ativo IS 'Situação do evento: ATIVO / INATIVO';

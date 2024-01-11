@@ -1,0 +1,19 @@
+
+quarkus:
+  datasource:
+    db-kind: postgresql
+    username: postgres
+    password: postgres
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/pontoeventos
+
+  flyway:
+    migrate-at-start: true
+
+  http:
+    cors:
+      ~: true
+      methods: GET, PUT, POST, DELETE, OPTIONS
+      headers: Origin, X-Requested-With, Content-Type, Accept, Authorization
+      origins: /.*/
+

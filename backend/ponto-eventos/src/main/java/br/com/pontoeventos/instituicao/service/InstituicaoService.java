@@ -1,5 +1,7 @@
 package br.com.pontoeventos.instituicao.service;
 
+import br.com.pontoeventos.evento.model.EventoModel;
+import br.com.pontoeventos.evento.service.EventoService;
 import br.com.pontoeventos.instituicao.converter.InstituicaoConverter;
 import br.com.pontoeventos.instituicao.dto.InstituicaoDTO;
 import br.com.pontoeventos.instituicao.enumeration.InstituicaoTipoEnumeration;
@@ -12,6 +14,9 @@ import jakarta.transaction.Transactional;
 
 import java.util.List;
 
+/**
+ * Service de Instituição
+ */
 @RequestScoped
 public class InstituicaoService {
 
@@ -27,13 +32,16 @@ public class InstituicaoService {
     @Inject
     InstituicaoConverter instituicaoConverter;
 
+    @Inject
+    EventoService eventoService;
+
     /**
      * Busca a lista de todas as instituições
      *
      * @return - lista dto de instituições
      */
     public List<InstituicaoDTO> findAll() {
-        List<InstituicaoModel> instituicaoModelList = InstituicaoModel.listAll();
+        List<InstituicaoModel> instituicaoModelList = instituicaoRepository.listAll();
         return instituicaoConverter.modelListToDtoList(instituicaoModelList);
     }
 
@@ -103,6 +111,12 @@ public class InstituicaoService {
 
         if (instituicaoModel == null) {
             throw new NaoEncontradoException(id.toString());
+        }
+
+        EventoModel eventoModel = eventoService.findInstituicaoInEvento(id);
+
+        if (eventoModel != null) {
+            throw new NaoEncontradoException("está sendo usado!");
         }
 
         instituicaoRepository.delete(instituicaoModel);

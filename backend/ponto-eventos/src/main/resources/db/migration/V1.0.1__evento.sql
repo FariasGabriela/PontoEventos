@@ -2,13 +2,13 @@ CREATE TABLE evento (
 	id integer NOT NULL,
 	nome varchar(200) NOT NULL,
 	data_inicial date NOT NULL,
-	data_final date NULL,
+	data_final date NOT NULL,
 	ativo boolean NOT NULL,
 	CONSTRAINT evento_pk PRIMARY KEY (id)
 );
 
 CREATE UNIQUE INDEX evento_id_idx ON evento (id);
-CREATE SEQUENCE eventoSequence START 1;
+CREATE SEQUENCE evento_id_seq START 1;
 
 -- Comentário das colunas
 COMMENT ON COLUMN evento.id IS 'Id';

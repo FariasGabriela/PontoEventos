@@ -18,4 +18,9 @@ Utilizei uma arquitetura que separa as classes:
 5: Converter: Converte um Model em DTO e vice versa;
 6. DTO: Para não devolver as entidades JPA na requisição, usamos um DTO como boa prática para não enviar dados sensível ou confidenciais;
 
+Além disso, há um utils com uma classe de exceção tratada ( detalhar )
+
+
+# Existe um postman caso queira testar validações que o frontend não possibita
+
 

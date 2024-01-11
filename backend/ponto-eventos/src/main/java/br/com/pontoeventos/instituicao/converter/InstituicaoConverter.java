@@ -65,6 +65,7 @@ public class InstituicaoConverter {
 
     /**
      * Converte uma lista de model para uma lista de DTO
+     *
      * @param instituicaoModelList - lista de model
      * @return lista de dto
      */

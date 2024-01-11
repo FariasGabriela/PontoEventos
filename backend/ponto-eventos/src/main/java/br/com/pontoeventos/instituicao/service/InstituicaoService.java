@@ -29,19 +29,21 @@ public class InstituicaoService {
 
     /**
      * Busca a lista de todas as instituições
+     *
      * @return - lista dto de instituições
      */
-    public List<InstituicaoDTO> findAll(){
+    public List<InstituicaoDTO> findAll() {
         List<InstituicaoModel> instituicaoModelList = InstituicaoModel.listAll();
         return instituicaoConverter.modelListToDtoList(instituicaoModelList);
     }
 
     /**
      * Busca uma instituições de acordo com o id
+     *
      * @param id - id de instituições
      * @return dto de instituições
      */
-    public InstituicaoDTO findById(Integer id){
+    public InstituicaoDTO findById(Integer id) {
         InstituicaoModel instituicaoModel = instituicaoRepository.findById(id);
 
         if (instituicaoModel == null) {
@@ -53,6 +55,7 @@ public class InstituicaoService {
 
     /**
      * cria um novo registro de instituições
+     *
      * @param instituicaoDTO - dto de instituições
      * @return dto de instituições
      */
@@ -69,6 +72,7 @@ public class InstituicaoService {
 
     /**
      * edita um registro de instituições
+     *
      * @param instituicaoDTO - dto de instituições
      * @return dto de instituições
      */
@@ -90,6 +94,7 @@ public class InstituicaoService {
 
     /**
      * deleta uma instituição
+     *
      * @param id - id que deve ser deletado
      */
     @Transactional
@@ -107,10 +112,11 @@ public class InstituicaoService {
 
     /**
      * Valida se o tipo enviado na requisição é valido
+     *
      * @param tipo - tipo
      * @return - descrição do tipo
      */
-    private String validacaoTipo(String tipo){
+    private String validacaoTipo(String tipo) {
         try {
             return InstituicaoTipoEnumeration.valueOf(tipo).name();
         } catch (IllegalArgumentException e) {

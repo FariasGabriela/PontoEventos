@@ -1,6 +1,5 @@
 package br.com.pontoeventos.instituicao.model;
 
-import br.com.pontoeventos.instituicao.enumeration.InstituicaoTipoEnumeration;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 
@@ -28,7 +27,7 @@ public class InstituicaoModel extends PanacheEntityBase {
     /**
      * Nome
      */
-    @Column(name= "nome")
+    @Column(name = "nome")
     private String name;
 
 
@@ -36,7 +35,7 @@ public class InstituicaoModel extends PanacheEntityBase {
      * Tipo da instituição:
      * CONFERERACAO; SINGULAR; CENTRAL; COOPERATIVA;
      */
-    @Column(name= "tipo")
+    @Column(name = "tipo")
     private String tipo;
 
     public Integer getId() {

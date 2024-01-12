@@ -1,18 +1,19 @@
 package br.com.pontoeventos.evento.service;
 
+import br.com.pontoeventos.evento.converter.EventoConverter;
 import br.com.pontoeventos.evento.dto.EventoDTO;
 import br.com.pontoeventos.evento.model.EventoModel;
-import br.com.pontoeventos.evento.repository.*;
-import br.com.pontoeventos.evento.converter.EventoConverter;
+import br.com.pontoeventos.evento.repository.EventoRepository;
 import br.com.pontoeventos.instituicao.dto.InstituicaoDTO;
 import br.com.pontoeventos.instituicao.model.InstituicaoModel;
 import br.com.pontoeventos.instituicao.repository.InstituicaoRepository;
-import br.com.pontoeventos.instituicao.service.InstituicaoService;
+import br.com.pontoeventos.utils.exception.DataInvalidaException;
 import br.com.pontoeventos.utils.exception.NaoEncontradoException;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -73,8 +74,11 @@ public class EventoService {
      */
     @Transactional
     public EventoDTO create(EventoDTO eventoDTO) {
+        validacaoData(eventoDTO.getDataInicial(), eventoDTO.getDataFinal());
+
         EventoModel eventoModel = eventoConverter.dtoToModel(eventoDTO);
         eventoModel.setInstituicaoModel(buscaValidaInstituicao(eventoDTO.getInstituicao()));
+        eventoModel.setAtivo(validacaoSituacao(eventoDTO.getDataInicial(), eventoDTO.getDataFinal()));
         eventoRepository.persist(eventoModel);
         eventoDTO.setId(eventoModel.getId());
 
@@ -89,6 +93,8 @@ public class EventoService {
      */
     @Transactional
     public EventoDTO update(EventoDTO eventoDTO) {
+        validacaoData(eventoDTO.getDataInicial(), eventoDTO.getDataFinal());
+
         EventoModel eventoModel = eventoRepository.findById(eventoDTO.getId());
 
         if (eventoModel == null) {
@@ -97,6 +103,7 @@ public class EventoService {
 
         eventoConverter.dtoToModel(eventoDTO, eventoModel);
         eventoModel.setInstituicaoModel(buscaValidaInstituicao(eventoDTO.getInstituicao()));
+        eventoModel.setAtivo(validacaoSituacao(eventoDTO.getDataInicial(), eventoDTO.getDataFinal()));
         eventoRepository.persist(eventoModel);
 
         return eventoDTO;
@@ -104,6 +111,7 @@ public class EventoService {
 
     /**
      * Valida se a instituição existe e retorna
+     *
      * @param instituicaoDTO - dto de instituição
      * @return - model de instituição
      */
@@ -137,12 +145,38 @@ public class EventoService {
 
     /**
      * Valida se a instituição está sendo usada em algum evento
+     *
      * @param idInstituicao - id da institução
      * @return
      */
     public EventoModel findInstituicaoInEvento(Integer idInstituicao) {
         return eventoRepository.find("instituicaoModel.id", idInstituicao).firstResult();
 
+    }
+
+    /**
+     * Valida se o periodo das datas sõa validas
+     *
+     * @param dataInicial - data inicial
+     * @param dataFinal   - data final
+     */
+    private void validacaoData(LocalDate dataInicial, LocalDate dataFinal) {
+        if (dataInicial.isAfter(dataFinal))
+            throw new DataInvalidaException();
+    }
+
+    /**
+     * Verifica se o evento é ativo
+     *
+     * @param dataInicial - data inicial
+     * @param dataFinal   - data final
+     * @return - ativo/inativo
+     */
+    private boolean validacaoSituacao(LocalDate dataInicial, LocalDate dataFinal) {
+        boolean dataInicialValida = dataInicial.isBefore(LocalDate.now()) || dataInicial.isEqual(LocalDate.now());
+        boolean dataFinalValida = dataFinal.isAfter(LocalDate.now()) || dataFinal.isEqual(LocalDate.now());
+
+        return dataInicialValida && dataFinalValida;
     }
 
 }

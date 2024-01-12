@@ -84,5 +84,5 @@ public class EventoConverter {
                 .map(eventoModel -> modelToDto(eventoModel, new EventoDTO()))
                 .collect(Collectors.toList());
     }
-    
+
 }

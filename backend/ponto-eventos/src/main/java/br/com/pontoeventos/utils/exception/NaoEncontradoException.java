@@ -8,7 +8,8 @@ public class NaoEncontradoException extends RuntimeException {
         this.message = message;
     }
 
-    public NaoEncontradoException() { }
+    public NaoEncontradoException() {
+    }
 
     @Override
     public String getMessage() {

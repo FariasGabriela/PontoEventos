@@ -8,7 +8,8 @@ public class DataInvalidaException extends RuntimeException {
         this.message = message;
     }
 
-    public DataInvalidaException() {}
+    public DataInvalidaException() {
+    }
 
     @Override
     public String getMessage() {

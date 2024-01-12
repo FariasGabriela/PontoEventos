@@ -1,3 +1,5 @@
+import { TipoInstituicaoEnum } from "../enum/TipoInstituicaoEnum";
+
 /**
  * Interface de objeto instituição
  */

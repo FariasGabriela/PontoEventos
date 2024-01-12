@@ -1,7 +1,7 @@
 /**
  * Enumeration de tipos de instituição
  */
-enum TipoInstituicaoEnum {
+export enum TipoInstituicaoEnum {
     CONFERERACAO = 'CONFERERACAO',
     SINGULAR = 'SINGULAR',
     CENTRAL = 'CENTRAL',

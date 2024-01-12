@@ -20,15 +20,9 @@ export default function SelectComponent(props: SelectProps) {
   return (
     <FormControl fullWidth>
       <InputLabel variant="standard" htmlFor="uncontrolled-native">
-        Tipo *
+        {title}
       </InputLabel>
-      <Select
-        id={id}
-        value={value}
-        label={title}
-        onChange={onChange}
-        variant="standard"
-      >
+      <Select id={id} value={value} onChange={onChange} variant="standard">
         {selectList.map((item) => (
           <MenuItem value={item}>{item}</MenuItem>
         ))}

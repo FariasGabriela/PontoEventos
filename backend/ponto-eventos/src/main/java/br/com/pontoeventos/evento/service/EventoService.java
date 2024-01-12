@@ -15,12 +15,15 @@ import jakarta.transaction.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Service de evento
  */
 @RequestScoped
 public class EventoService {
+
+    Logger logger = Logger.getLogger(EventoService.class.getName());
 
     /**
      * Repository
@@ -177,6 +180,58 @@ public class EventoService {
         boolean dataFinalValida = dataFinal.isAfter(LocalDate.now()) || dataFinal.isEqual(LocalDate.now());
 
         return dataInicialValida && dataFinalValida;
+    }
+
+    /**
+     * Valida a vigencia dos eventos
+     */
+    @Transactional
+    public void validarVigenciaEventos() {
+        ativarEventos();
+        inativarEventos();
+    }
+
+    /**
+     * Valida a vigencia dos eventos ativos
+     */
+    private void ativarEventos(){
+        List<EventoModel> eventoModelList = eventoRepository
+                .list("dataInicial <= CURRENT_DATE AND dataFinal >= CURRENT_DATE AND ativo = false");
+
+        for (EventoModel eventoModel : eventoModelList) {
+            eventoModel.setAtivo(true);
+            eventoRepository.persist(eventoModel);
+
+            loggerEventos(eventoModel);
+            logger.info("ativado com sucesso!");
+        }
+    }
+
+    /**
+     * Valida a vigencia dos eventos inativos
+     */
+    private void inativarEventos(){
+        List<EventoModel> eventoModelList = eventoRepository
+                .list("(dataInicial > CURRENT_DATE OR dataFinal < CURRENT_DATE) AND ativo = true");
+
+        eventoModelList.forEach(eventoModel -> {
+            eventoModel.setAtivo(false);
+            eventoRepository.persist(eventoModel);
+
+            loggerEventos(eventoModel);
+            logger.info("inativado com sucesso!");
+        });
+    }
+
+    /**
+     * Logs de ativação/inativação de evento
+     * @param eventoModel
+     */
+    private void loggerEventos(EventoModel eventoModel){
+        logger.info("-----EVENTOS-----");
+        logger.info("Id:           " + eventoModel.getId() + "");
+        logger.info("Data inicial: " + eventoModel.getDataInicial() + "");
+        logger.info("Data final:   " + eventoModel.getDataFinal() + "");
     }
 
 }

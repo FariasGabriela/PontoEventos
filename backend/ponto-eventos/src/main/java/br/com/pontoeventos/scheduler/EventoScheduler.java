@@ -12,7 +12,7 @@ public class EventoScheduler {
     @Inject
     EventoService eventoService;
 
-    @Scheduled(cron = "0 08 10 * * ?")
+    @Scheduled(cron = "0 00 00 * * ?")
     void cronJob(ScheduledExecution execution) {
         eventoService.validarVigenciaEventos();
     }

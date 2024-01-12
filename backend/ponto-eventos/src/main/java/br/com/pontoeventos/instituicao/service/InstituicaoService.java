@@ -134,7 +134,7 @@ public class InstituicaoService {
         try {
             return InstituicaoTipoEnumeration.valueOf(tipo).name();
         } catch (IllegalArgumentException e) {
-            throw new NaoEncontradoException(tipo);
+            throw new NaoEncontradoException();
         }
     }
 }

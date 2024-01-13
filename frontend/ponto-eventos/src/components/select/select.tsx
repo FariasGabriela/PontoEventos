@@ -4,29 +4,35 @@ import {
   Select,
   MenuItem,
   SelectChangeEvent,
+  FormHelperText,
 } from "@mui/material";
+import TipoModel from "../../model/tipo";
 
 interface SelectProps {
   id: string;
-  value: "" | null | undefined;
+  value: any;
   title: string;
   onChange: (event: SelectChangeEvent<null>, child: React.ReactNode) => void;
-  selectList: string[];
+  selectList: TipoModel[];
+  helperText: string;
+  error: boolean;
 }
 
-export default function SelectComponent(props: SelectProps) {
-  const { id, value, title, onChange, selectList } = props;
+export default function SelectComponent(props: SelectProps) : JSX.Element {
+  const { id, value, title, onChange, selectList, helperText, error } = props;
 
   return (
-    <FormControl fullWidth>
+    <FormControl fullWidth error={error}>
       <InputLabel variant="standard" htmlFor="uncontrolled-native">
         {title}
       </InputLabel>
       <Select id={id} value={value} onChange={onChange} variant="standard">
         {selectList.map((item) => (
-          <MenuItem value={item}>{item}</MenuItem>
+          <MenuItem key={item.sigla} value={item.sigla}>{item.descricao}</MenuItem>
         ))}
       </Select>
+
+      {error && <FormHelperText>{helperText}</FormHelperText>}
     </FormControl>
   );
 }

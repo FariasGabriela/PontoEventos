@@ -4,9 +4,9 @@ import { TipoInstituicaoEnum } from "../enum/TipoInstituicaoEnum";
  * Interface de objeto instituição
  */
 interface InstituicaoModel {
-    id: number;
-    name: string;
-    tipo: TipoInstituicaoEnum;
+    id: number | null;
+    name: string | null;
+    tipo: string | null;
 }
 
 export default InstituicaoModel;

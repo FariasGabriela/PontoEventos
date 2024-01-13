@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import InstituicaoModel from "../../model/instituicao";
 import { useNavigate } from "react-router-dom";
 import selectTipoList from "./utils/TipoInstituicaoModel";
+import CardComponent from "../../components/card/card";
 
 const columns: GridColDef[] = [
   {
@@ -42,38 +43,53 @@ export default function ListagemInstituicao() {
   }, []);
 
   return (
-    <div className="datagrid">
-      <Button onClick={() => history("/")} variant="contained">
-        Cancelar
-      </Button>
-      <div style={{ width: 30 }} />
-      <Button
-        onClick={() => history("/cadastro-instituicao/novo")}
-        variant="contained"
-      >
-        Cadastrar
-      </Button>
-      <Button
-        onClick={() => history(`/cadastro-instituicao/${selected}`)}
-        variant="contained"
-      >
-        Editar
-      </Button>
-      <DataGrid
-        rows={instituicaoList}
-        columns={columns}
-        hideFooterPagination={true}
-        onRowSelectionModelChange={(rowSelectionModel: any) => {
-          setSelected(rowSelectionModel[0] || null);
-        }}
-        slots={{
-          noRowsOverlay: () => (
-            <Stack height="100%" alignItems="center" justifyContent="center">
-              Não há cadastros
-            </Stack>
-          ),
-        }}
-      />
+    <div className="background-card">
+      <CardComponent title="Instituição">
+        <div className="overflow">
+          <div className="card-buttons">
+            <Button onClick={() => history("/")} variant="contained">
+              Voltar
+            </Button>
+            <div style={{ width: 30 }} />
+            <Button
+              onClick={() => history("/cadastro-instituicao/novo")}
+              variant="contained"
+            >
+              Cadastrar
+            </Button>
+            <div style={{ width: 30 }} />
+            <Button
+              onClick={() => history(`/cadastro-instituicao/${selected}`)}
+              variant="contained"
+              disabled={!selected}
+            >
+              Editar
+            </Button>
+          </div>
+          <div className="datagrid">
+            <DataGrid
+              rows={instituicaoList}
+              columns={columns}
+              hideFooterPagination={true}
+              onRowSelectionModelChange={(rowSelectionModel: any) => {
+                setSelected(rowSelectionModel[0] || null);
+              }}
+              hideFooterSelectedRowCount={true}
+              slots={{
+                noRowsOverlay: () => (
+                  <Stack
+                    height="100%"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    Não há cadastros
+                  </Stack>
+                ),
+              }}
+            />
+          </div>
+        </div>
+      </CardComponent>
     </div>
   );
 }

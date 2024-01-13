@@ -6,8 +6,8 @@ interface DatePickerProps {
   onChange: (value: any) => void;
   helperText?: string;
   error?: boolean;
-  maxDate?: string | number | Date;
-  minDate?: string | number | Date;
+  maxDate?: string | number | Date | Object;
+  minDate?: string | number | Date | Object;
 }
 
 export default function DatePickerComponent(props: DatePickerProps) {

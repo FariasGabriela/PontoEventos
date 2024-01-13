@@ -21,6 +21,7 @@ import DatePickerComponent from "../../components/date-picker/date-picker";
 import AutoCompleteComponente from "../../components/autocomplete/autocomplete";
 import InstituicaoModel from "../../model/instituicao";
 import moment from "moment";
+import dayjs from "dayjs";
 
 export default function CadastroEavento() {
   const eventoAPI = new EventoAPI();
@@ -29,8 +30,8 @@ export default function CadastroEavento() {
     []
   );
   const [ativo, setAtivo] = useState<boolean>(false);
-  const [dataInicial, setDataInicial] = useState<number | Date | string>();
-  const [dataFinal, setDataFinal] = useState<number | Date | string>();
+  const [dataInicial, setDataInicial] = useState<any>();
+  const [dataFinal, setDataFinal] = useState<any>();
   let history = useNavigate();
   let { id } = useParams();
 
@@ -63,14 +64,17 @@ export default function CadastroEavento() {
    */
   function findEventoById() {
     eventoAPI.findById(id || "").then((result: any) => {
-      const dataInicialAux = result.data;
-      setInitialValues(result.data);
+      const dataAux = result.data;
+      setInitialValues(dataAux);
+      setDataInicial(dayjs(dataAux.dataInicial))
+      setDataFinal(dayjs(dataAux.dataFinal))
+      setAtivo(dataAux.ativo);
 
-      setFieldValue("name", dataInicialAux.name);
-      setFieldValue("dataInicial", dataInicialAux.dataInicial);
-      setFieldValue("dataFinal", dataInicialAux.dataFinal);
-      setFieldValue("ativo", dataInicialAux.ativo);
-      setFieldValue("instituicao", dataInicialAux.instituicao);
+      setFieldValue("name", dataAux.name);
+      setFieldValue("dataInicial", dataAux.dataInicial);
+      setFieldValue("dataFinal", dataAux.dataFinal);
+      setFieldValue("ativo", dataAux.ativo);
+      setFieldValue("instituicao", dataAux.instituicao);
     });
   }
 
@@ -90,7 +94,7 @@ export default function CadastroEavento() {
   return (
     <div className="background-card">
       <CssBaseline />
-      <CardComponent title="Instituição">
+      <CardComponent title="Evento">
         <div style={{ marginTop: 30 }}>
           <Grid container spacing={5}>
             <Grid item xs={12} style={{ height: 80 }}>
@@ -108,6 +112,7 @@ export default function CadastroEavento() {
               <DatePickerComponent
                 title="Data Inicial"
                 onChange={(e) => {
+                  console.log(e)
                   setDataInicial(e);
                   setFieldValue("dataInicial", e);
                   dataFinal && validaSituacao(e, dataFinal);

@@ -1,3 +1,4 @@
+
 import InstituicaoModel from "./instituicao";
 
 /**
@@ -6,7 +7,7 @@ import InstituicaoModel from "./instituicao";
 interface EventoModel {
     id?: number | null;
     name: string | null;
-    dataInicial?: Date | string | number | null;
+    dataInicial?: Date | string | number | null | Object;
     dataFinal?: Date | string  | number | null;
     ativo: boolean;
     instituicao?: InstituicaoModel | null;

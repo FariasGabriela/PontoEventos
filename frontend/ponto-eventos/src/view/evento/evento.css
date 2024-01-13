@@ -6,13 +6,16 @@
     margin-top: 70px;
 }
 
+.overflow {
+    overflow: hidden;
+}
+
 .datagrid {
-    height: 90vh;
+    height: 60vh;
 }
 
 .background-card {
-    background-color: #005c46;
-    height: 100vh;
+    height: 84vh;
     padding-top: 60px;
 }
 
@@ -20,4 +23,12 @@
     height: 80px;
     display: flex;
     justify-content: space-between;
+}
+
+.card-buttons {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

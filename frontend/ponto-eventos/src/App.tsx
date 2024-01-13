@@ -1,5 +1,4 @@
 import { ThemeProvider } from "@mui/material";
-import "./App.css";
 import Home from "./view/home/home";
 import { theme } from "./theme";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -16,14 +15,28 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <AppBarComponent title="Ponto Eventos" />
-        <Routes>
-          <Route path="/" index element={<Home />} />
-          <Route path="/listagem-evento" index element={<ListagemEvento />} />
-          <Route path="/cadastro-evento/:id" index element={<CadastroEvento />} />
-          <Route path="/listagem-instituicao" index element={<ListagemInstituicao />} />
-          <Route path="/cadastro-instituicao/:id" index element={<CadastroInstituicao />} />
-        </Routes>
+        <div style={{ backgroundColor: "#005c46", height: '100vh' }}>
+          <AppBarComponent title="Ponto Eventos" />
+          <Routes>
+            <Route path="/" index element={<Home />} />
+            <Route path="/listagem-evento" index element={<ListagemEvento />} />
+            <Route
+              path="/cadastro-evento/:id"
+              index
+              element={<CadastroEvento />}
+            />
+            <Route
+              path="/listagem-instituicao"
+              index
+              element={<ListagemInstituicao />}
+            />
+            <Route
+              path="/cadastro-instituicao/:id"
+              index
+              element={<CadastroInstituicao />}
+            />
+          </Routes>
+        </div>
       </BrowserRouter>
     </ThemeProvider>
   );

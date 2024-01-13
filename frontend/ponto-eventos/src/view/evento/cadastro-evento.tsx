@@ -109,14 +109,14 @@ export default function CadastroEavento() {
                 title="Data Inicial"
                 onChange={(e) => {
                   setDataInicial(e);
-                  setFieldValue('dataInicial', e)
+                  setFieldValue("dataInicial", e);
                   dataFinal && validaSituacao(e, dataFinal);
                 }}
                 maxDate={dataFinal || undefined}
                 value={dataInicial}
-                error={errors.dataInicial && (dataInicial == null) ? true : false}
+                error={errors.dataInicial && dataInicial == null ? true : false}
                 helperText={
-                  errors.dataInicial && (dataInicial == null)
+                  errors.dataInicial && dataInicial == null
                     ? errors.dataInicial
                     : ""
                 }
@@ -127,13 +127,13 @@ export default function CadastroEavento() {
                 onChange={(e) => {
                   setDataFinal(e);
                   dataInicial && validaSituacao(dataInicial, e);
-                  setFieldValue('dataFinal', e)
+                  setFieldValue("dataFinal", e);
                 }}
                 minDate={dataInicial || undefined}
                 value={dataFinal}
-                error={errors.dataFinal && (dataFinal == null) ? true : false}
+                error={errors.dataFinal && dataFinal == null ? true : false}
                 helperText={
-                  errors.dataFinal && (dataFinal == null) ? errors.dataFinal : ""
+                  errors.dataFinal && dataFinal == null ? errors.dataFinal : ""
                 }
               />
 
@@ -185,21 +185,19 @@ export default function CadastroEavento() {
   /**
    * Verifica as datas para alterar situação
    */
-  function validaSituacao(dataInicialAux: Date | number | string, dataFinalAux: Date | number | string ) {
-    if (!dataInicialAux && !dataFinalAux) return
+  function validaSituacao(
+    dataInicialAux: Date | number | string,
+    dataFinalAux: Date | number | string
+  ) {
+    if (!dataInicialAux && !dataFinalAux) return;
 
-    console.log(moment( new Date(dataFinalAux)).isSame(moment()));
-    console.log(moment( new Date(dataFinalAux)))
- 
-    const today = moment().hour(0).minute(0).second(0).millisecond(0)
-    console.log(today)
+    const today = moment().hour(0).minute(0).second(0).millisecond(0);
 
     const ativoAux: boolean =
-      moment( new Date(dataInicialAux)).isSameOrBefore(moment()) &&
+      moment(new Date(dataInicialAux)).isSameOrBefore(moment()) &&
       moment(new Date(dataFinalAux)).isSameOrAfter(today);
 
     setAtivo(ativoAux);
-    
   }
 
   /**

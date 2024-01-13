@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import { SwalError, SwalLoading, SwalSucess } from "../../components/swal/swal";
 import InstituicaoAPI from "./../../resources/instituicao";
 import { useNavigate, useParams } from "react-router-dom";
-import "./instituicao.css";
 import selectTipoList from "./utils/TipoInstituicaoModel";
 
 export default function CadastroInstituicao() {

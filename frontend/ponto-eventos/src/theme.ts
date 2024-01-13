@@ -22,6 +22,13 @@ const theme = createTheme({
           marginLeft: 0
         }
       }
+    },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          maxWidth: '700px !important'
+        }
+      }
     }
   },
   palette: {

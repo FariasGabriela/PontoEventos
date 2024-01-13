@@ -40,6 +40,8 @@ export default function ListagemInstituicao() {
 
   useEffect(() => {
     instituicaoAPI.findAll().then((result) => setInstituicaoList(result.data));
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

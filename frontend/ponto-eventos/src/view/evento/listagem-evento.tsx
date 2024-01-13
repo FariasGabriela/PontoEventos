@@ -64,6 +64,8 @@ export default function ListagemEvento() {
 
   useEffect(() => {
     eventoAPI.findAll().then((result) => setEventoList(result.data));
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

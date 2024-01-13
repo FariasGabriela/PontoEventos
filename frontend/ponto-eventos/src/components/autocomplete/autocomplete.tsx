@@ -1,7 +1,6 @@
 import { TextField } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
 import InstituicaoModel from "../../model/instituicao";
-import { ReactEventHandler } from "react";
 
 interface AutoCompleteProps {
   id: string;

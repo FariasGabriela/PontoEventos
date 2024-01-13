@@ -48,6 +48,8 @@ export default function CadastroEavento() {
     if (id === "novo") return;
 
     findEventoById();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**
@@ -112,7 +114,6 @@ export default function CadastroEavento() {
               <DatePickerComponent
                 title="Data Inicial"
                 onChange={(e) => {
-                  console.log(e)
                   setDataInicial(e);
                   setFieldValue("dataInicial", e);
                   dataFinal && validaSituacao(e, dataFinal);

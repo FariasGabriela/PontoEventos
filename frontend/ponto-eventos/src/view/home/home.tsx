@@ -1,4 +1,3 @@
-import AppBarComponent from "../../components/appbar/appbar";
 import "./home.css";
 import Transitions from "../../components/transitions/transitions";
 import { useNavigate } from "react-router-dom";

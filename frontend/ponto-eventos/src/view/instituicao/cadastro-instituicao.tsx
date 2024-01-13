@@ -34,6 +34,8 @@ export default function CadastroInstituicao() {
       );
       setFieldValue("tipo", tipo?.sigla);
     });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const { values, touched, errors, handleChange, handleSubmit, setFieldValue } =

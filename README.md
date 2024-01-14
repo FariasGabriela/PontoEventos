@@ -9,7 +9,7 @@ Ponto Eventos é sua plataforma de cadastro de eventos
 ## Como usar 
 - ``` git clone <link/ssh_do_projeto> ```
 - ``` cd PontoEventos/ ```
-- Criar um banco de dados Postgresql chamado pontoeventos
+- ``` Criar um banco de dados Postgresql chamado pontoeventos ```
 
 **Projeto backend**
 - ``` cd backend/ponto-eventos ```
@@ -23,6 +23,7 @@ Com essas configurações o frontend estará rodando
 - ``` cd frontend/ponto-eventos ```
 - ``` npm install ```
 - ``` npm start ```
+  
 Com essas configurações o frontend estará rodando
 
 Agora só usar a aplicação 😁

@@ -9,6 +9,9 @@ Ponto Eventos é sua plataforma de cadastro de eventos
 
 ## Projeto Backend
 
+**Descrição das funcionalidades:**
+O backend contém dois CRUD's completos, um para evento e outro para instituição. Os dois contém métodos de findAll(GET), findById(GET), create(POST), update(PUT) e delete(DELETE)
+
 **Tecnologias utilizadas:**
 * [Quarkus](https://quarkus.io/): Framerwork Java;
 * [PostgreSQL](https://www.postgresql.org/): Banco de dados;
@@ -38,5 +41,39 @@ Ex:
 Esse exemplo define que o método vai ser executado as 10:15 todo dia, é possivel trocar o segundo parâmetro (15) para os minutos pretendidos e o terceiro parâmetro (10) para a hora pretendida.
 
 **O frontend não permite enviar campos em branco ou com valores não correspondentes e datas inválidas, com data de inicial maior que data final, por exemplo, caso queira fazer alguns testes com relação a isso, existe um postman para testar validações que o frontend não possibita, pois existem essas validações no backend**
+
+---
+
+## Projeto Frontend
+
+**Descrição das funcionalidades:**
+Ao acessar o projeto frontend é apresentado uma tela com dois botões, um para cadastrar evento e outra para cadastrar instituição;
+
+[Tela Inicial]([https://www.exemplo.com](https://drive.google.com/file/d/1qkg8wF54avAfwJ33v86JnO5s6FhhJsjS/view?usp=sharing))
+
+Ao acessar um dos cadastros, ou seja, clicar em um dos botões da tela inicial, é redirecionado para uma tela de listagem, apresentando os eventos que já foram cadastrados, com a possibilidade de editar esses, ou cadastrar um novo;
+
+[Tela de Listagem](https://drive.google.com/file/d/1_wGnfmIEY2mV90fhZdqPHhhy8U8hfoJ1/view?usp=sharing)
+
+A tela de editar e cadastrar são identicas, a diferença que ao acessar a tela para cadastrar um novo, os campos são apresentados em branco, e caso a tela seja para editar, os campos são preenchidos com os dados já salvos;
+
+[Tela de Cadastrar Novo/Editar](https://drive.google.com/file/d/18IZHA9pZf4IAgHnkcKmqh8JTf3GatmWQ/view?usp=sharing)
+
+**Tecnologias utilizadas:**
+* [React](https://react.dev/): Framework Javascript/Typescript;
+* 
+
+**Utilizei uma arquitetura para separação das classes da seguinte maneira:**
+
+
+
+
+
+
+
+
+
+
+
 
 

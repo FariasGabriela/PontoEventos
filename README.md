@@ -49,7 +49,7 @@ Esse exemplo define que o método vai ser executado as 10:15 todo dia, é possiv
 **Descrição das funcionalidades:**
 Ao acessar o projeto frontend é apresentado uma tela com dois botões, um para cadastrar evento e outra para cadastrar instituição;
 
-![Tela Inicial]([https://www.exemplo.com](https://drive.google.com/file/d/1qkg8wF54avAfwJ33v86JnO5s6FhhJsjS/view?usp=sharing))
+![Tela Inicial](https://drive.google.com/file/d/1qkg8wF54avAfwJ33v86JnO5s6FhhJsjS/view?usp=sharing)
 
 Ao acessar um dos cadastros, ou seja, clicar em um dos botões da tela inicial, é redirecionado para uma tela de listagem, apresentando os eventos que já foram cadastrados, com a possibilidade de editar esses, ou cadastrar um novo;
 

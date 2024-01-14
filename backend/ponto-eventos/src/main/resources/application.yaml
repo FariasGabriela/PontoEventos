@@ -5,7 +5,7 @@ quarkus:
     username: postgres
     password: postgres
     jdbc:
-      url: jdbc:postgresql://localhost:5432/pontoeventos
+      url: '${URL_POSTGRES:jdbc:postgresql://localhost:5432/teste}'
 
   flyway:
     migrate-at-start: true

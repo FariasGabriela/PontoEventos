@@ -7,12 +7,20 @@ Ponto Eventos é sua plataforma de cadastro de eventos
 
  
 ## Como usar 
-**Projeto backend**
+
 - Criar um banco de dados Postgresql chamado pontoeventos
 - Configurar em resources/application.yaml na linha 8 a URL local do postgres 
 - ``` git clone <link/ssh_do_projeto> ```
 - ``` cd PontoEventos/ ```
-  
+
+**Projeto backend**
+- ``` cd backend/ponto-eventos ```
+- ``` mvn clean compile install ```
+- ``` mvn quarkus:dev -DURL_POSTGRES={link_do_postgres_local} ```
+
+* link_do_postgres_local: por default está cadastrado *jdbc:postgresql://localhost:5432/pontoeventos*, caso a porta do banco seja 5432 pode executar apenas *mvn quarkus:dev*, caso a porta ou a URL seja diferente, é necessário passar por parametro a nova porta, ex: * mvn quarkus:dev -DURL_POSTGRES=jdbc:postgresql://localhost:5432/pontoeventos*
+
+Com essas configurações o frontend estará rodando
 **Projeto frontend**
 - ``` cd frontend/ponto-eventos ```
 - ``` npm install ```

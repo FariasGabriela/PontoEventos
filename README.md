@@ -5,9 +5,25 @@ Ponto Eventos é sua plataforma de cadastro de eventos
 - *Cadastro instituição*: Contém nome e tipo;
 - *Cadastro evento*: Contém data de ínicio e data de final. A situação do evento (ativo/inativo) é alterada de acordo com a data de vigência, e é necessário selecionar uma instituição organizadora do evento.
 
+ 
+## Como usar 
+**Projeto backend**
+- Criar um banco de dados Postgresql chamado pontoeventos
+- Configurar em resources/application.yaml na linha 8 a URL local do postgres 
+- ``` git clone <link/ssh_do_projeto> ```
+- ``` cd PontoEventos/ ```
+  
+**Projeto frontend**
+- ``` cd frontend/ponto-eventos ```
+- ``` npm install ```
+- ``` npm start ```
+Com essas configurações o frontend estará rodando
+
+Agora só usar a aplicação 😁
+
 ---
 
-## Projeto Backend
+### Documentação Backend
 
 **Descrição das funcionalidades:**
 O backend contém dois CRUD's completos, um para evento e outro para instituição. Os dois contém métodos de findAll(GET), findById(GET), create(POST), update(PUT) e delete(DELETE)
@@ -44,7 +60,7 @@ Esse exemplo define que o método vai ser executado as 10:15 todo dia, é possiv
 
 ---
 
-## Projeto Frontend
+### Documentação Frontend
 
 **Descrição das funcionalidades:**
 Ao acessar o projeto frontend é apresentado uma tela com dois botões, um para cadastrar evento e outra para cadastrar instituição;

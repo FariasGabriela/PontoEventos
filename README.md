@@ -1,6 +1,12 @@
 # PontoEventos
 Ponto Eventos é sua plataforma de cadastro de eventos
 
+**O sistema possui:**
+- *Cadastro instituição*: Contém nome e tipo;
+- *Cadastro evento*: Contém data de ínicio e data de final. A situação do evento (ativo/inativo) é alterada de acordo com a data de vigência, e é necessário selecionar uma instituição organizadora do evento.
+
+
+---
 
 ##Projeto Backend
 

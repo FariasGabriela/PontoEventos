@@ -49,15 +49,15 @@ Esse exemplo define que o método vai ser executado as 10:15 todo dia, é possiv
 **Descrição das funcionalidades:**
 Ao acessar o projeto frontend é apresentado uma tela com dois botões, um para cadastrar evento e outra para cadastrar instituição;
 
-[Tela Inicial]([https://www.exemplo.com](https://drive.google.com/file/d/1qkg8wF54avAfwJ33v86JnO5s6FhhJsjS/view?usp=sharing))
+![Tela Inicial]([https://www.exemplo.com](https://drive.google.com/file/d/1qkg8wF54avAfwJ33v86JnO5s6FhhJsjS/view?usp=sharing))
 
 Ao acessar um dos cadastros, ou seja, clicar em um dos botões da tela inicial, é redirecionado para uma tela de listagem, apresentando os eventos que já foram cadastrados, com a possibilidade de editar esses, ou cadastrar um novo;
 
-[Tela de Listagem](https://drive.google.com/file/d/1_wGnfmIEY2mV90fhZdqPHhhy8U8hfoJ1/view?usp=sharing)
+![Tela de Listagem](https://drive.google.com/file/d/1_wGnfmIEY2mV90fhZdqPHhhy8U8hfoJ1/view?usp=sharing)
 
 A tela de editar e cadastrar são identicas, a diferença que ao acessar a tela para cadastrar um novo, os campos são apresentados em branco, e caso a tela seja para editar, os campos são preenchidos com os dados já salvos;
 
-[Tela de Cadastrar Novo/Editar](https://drive.google.com/file/d/18IZHA9pZf4IAgHnkcKmqh8JTf3GatmWQ/view?usp=sharing)
+![Tela de Cadastrar Novo/Editar](https://drive.google.com/file/d/18IZHA9pZf4IAgHnkcKmqh8JTf3GatmWQ/view?usp=sharing)
 
 **Tecnologias utilizadas:**
 * [React](https://react.dev/): Framework Javascript/Typescript;

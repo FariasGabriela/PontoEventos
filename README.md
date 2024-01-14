@@ -7,11 +7,9 @@ Ponto Eventos é sua plataforma de cadastro de eventos
 
  
 ## Como usar 
-
-- Criar um banco de dados Postgresql chamado pontoeventos
-- Configurar em resources/application.yaml na linha 8 a URL local do postgres 
 - ``` git clone <link/ssh_do_projeto> ```
 - ``` cd PontoEventos/ ```
+- Criar um banco de dados Postgresql chamado pontoeventos
 
 **Projeto backend**
 - ``` cd backend/ponto-eventos ```

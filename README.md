@@ -61,10 +61,20 @@ A tela de editar e cadastrar são identicas, a diferença que ao acessar a tela 
 
 **Tecnologias utilizadas:**
 * [React](https://react.dev/): Framework Javascript/Typescript;
-* 
+* [Mui](https://mui.com/): Biblioteca de componentes, com interfaces prontas, como Text Field, Data Grid, Grid, Select, Auto Complete dentre outros;
+* [Axios](https://axios-http.com/ptbr/docs/intro): Biblioteca para integração com backend;
+* [Formik](https://formik.org/): Biblioteca para validação de informações dos campos;
+* [Yup](https://www.npmjs.com/package/yup): Biblioteca para validação de campos obrigátorios;
+* [Moment](https://momentjs.com/): Biblioteca para manipulação do formato de datas;
+* [React Router Dom](https://reactrouter.com/en/main): Biblioteca para manipulação de rotas;
+* [Sweet Alert](https://sweetalert2.github.io/): Biblioteca para pop'us de sucesso, erro e aviso;
 
 **Utilizei uma arquitetura para separação das classes da seguinte maneira:**
-
+1. *Components*: Contém os componentes da aplicação, que são utilizadas em lugares diferentes, podem ser estilizados no componente apenas uma vez;
+2. *Enum*: Enumeration da aplicação, coleção de valores fixos predefinidos e eimutáveis;
+3. *Model*: Models da aplicação, cada classe possui as entidades do objeto;
+4. *Resource*: Classes que fazem a conexão com a API;
+5. *View*: Telas do sistema
 
 
 

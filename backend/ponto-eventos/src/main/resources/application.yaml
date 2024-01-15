@@ -2,8 +2,8 @@
 quarkus:
   datasource:
     db-kind: postgresql
-    username: postgres
-    password: postgres
+    username: '${USERNAME_POSTGRES:postgres}'
+    password: '${PASSWORD_POSTGRES:postgres}'
     jdbc:
       url: '${URL_POSTGRES:jdbc:postgresql://localhost:5432/pontoeventos}'
 

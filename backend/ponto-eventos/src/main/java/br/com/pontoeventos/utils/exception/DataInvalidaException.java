@@ -1,5 +1,8 @@
 package br.com.pontoeventos.utils.exception;
 
+/**
+ * Exception de data inválida
+ */
 public class DataInvalidaException extends RuntimeException {
 
     private String message;

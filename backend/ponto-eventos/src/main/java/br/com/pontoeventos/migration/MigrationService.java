@@ -4,6 +4,9 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.flywaydb.core.Flyway;
 
+/**
+ * Classe para log de criação do banco de dados
+ */
 @ApplicationScoped
 public class MigrationService {
 

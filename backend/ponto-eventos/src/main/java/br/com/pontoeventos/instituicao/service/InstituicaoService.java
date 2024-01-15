@@ -32,6 +32,9 @@ public class InstituicaoService {
     @Inject
     InstituicaoConverter instituicaoConverter;
 
+    /**
+     * service de evento
+     */
     @Inject
     EventoService eventoService;
 

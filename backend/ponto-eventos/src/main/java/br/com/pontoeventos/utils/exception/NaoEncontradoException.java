@@ -1,5 +1,8 @@
 package br.com.pontoeventos.utils.exception;
 
+/**
+* Exception de objeto nao encontrado pelo id
+ */
 public class NaoEncontradoException extends RuntimeException {
 
     private String message;

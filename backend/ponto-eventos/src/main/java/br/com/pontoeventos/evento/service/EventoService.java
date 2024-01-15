@@ -26,7 +26,7 @@ public class EventoService {
     Logger logger = Logger.getLogger(EventoService.class.getName());
 
     /**
-     * Repository
+     * Repository de evento
      */
     @Inject
     EventoRepository eventoRepository;

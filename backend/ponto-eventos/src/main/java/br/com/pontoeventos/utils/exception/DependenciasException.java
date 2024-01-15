@@ -2,6 +2,9 @@ package br.com.pontoeventos.utils.exception;
 
 import jakarta.ws.rs.ext.Provider;
 
+/**
+ * Exception de não poder excluir objeto por causa de dependencias
+ */
 @Provider
 public class DependenciasException extends RuntimeException {
 

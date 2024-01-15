@@ -4,6 +4,9 @@ import br.com.pontoeventos.evento.model.EventoModel;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 
+/**
+ * Repository de evento
+ */
 @ApplicationScoped
 public class EventoRepository implements PanacheRepository<EventoModel> {
 

@@ -194,7 +194,7 @@ public class EventoService {
     /**
      * Valida a vigencia dos eventos ativos
      */
-    private void ativarEventos(){
+    private void ativarEventos() {
         List<EventoModel> eventoModelList = eventoRepository
                 .list("dataInicial <= CURRENT_DATE AND dataFinal >= CURRENT_DATE AND ativo = false");
 
@@ -210,7 +210,7 @@ public class EventoService {
     /**
      * Valida a vigencia dos eventos inativos
      */
-    private void inativarEventos(){
+    private void inativarEventos() {
         List<EventoModel> eventoModelList = eventoRepository
                 .list("(dataInicial > CURRENT_DATE OR dataFinal < CURRENT_DATE) AND ativo = true");
 
@@ -225,9 +225,10 @@ public class EventoService {
 
     /**
      * Logs de ativação/inativação de evento
+     *
      * @param eventoModel
      */
-    private void loggerEventos(EventoModel eventoModel){
+    private void loggerEventos(EventoModel eventoModel) {
         logger.info("-----EVENTOS-----");
         logger.info("Id:           " + eventoModel.getId() + "");
         logger.info("Data inicial: " + eventoModel.getDataInicial() + "");

@@ -13,7 +13,7 @@ import jakarta.ws.rs.core.Response;
 @Path("/instituicao")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class InsituicaoController {
+public class InstituicaoController {
 
     /**
      * Service de Instituição
@@ -40,6 +40,7 @@ public class InsituicaoController {
 
     /**
      * Cria uma nova instituição
+     *
      * @param instituicaoDTO - DTO de instituição
      */
     @POST
@@ -49,6 +50,7 @@ public class InsituicaoController {
 
     /**
      * Edita uma instituição
+     *
      * @param instituicaoDTO - DTO de instituição
      */
     @PUT
@@ -58,6 +60,7 @@ public class InsituicaoController {
 
     /**
      * Deleta uma instituição
+     *
      * @param id - id da instituição
      */
     @DELETE

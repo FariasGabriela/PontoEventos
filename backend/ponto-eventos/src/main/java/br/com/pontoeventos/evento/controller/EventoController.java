@@ -40,6 +40,7 @@ public class EventoController {
 
     /**
      * Cria um novo evento
+     *
      * @param eventoDTO - DTO de evento
      */
     @POST
@@ -49,6 +50,7 @@ public class EventoController {
 
     /**
      * Edita um evento existente
+     *
      * @param eventoDTO - DTO de evento
      */
     @PUT
@@ -58,6 +60,7 @@ public class EventoController {
 
     /**
      * Deleta o evento
+     *
      * @param id - id do evento a ser deletado
      */
     @DELETE

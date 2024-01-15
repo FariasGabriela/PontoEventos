@@ -12,6 +12,9 @@ import InstituicaoAPI from "./../../resources/instituicao";
 import { useNavigate, useParams } from "react-router-dom";
 import selectTipoList from "./utils/TipoInstituicaoModel";
 
+/**
+ * Tela de cadastro de instituição
+ */
 export default function CadastroInstituicao() {
   const instituicaoAPI = new InstituicaoAPI();
   let history = useNavigate();
@@ -111,7 +114,7 @@ export default function CadastroInstituicao() {
         })
         .catch(() => SwalError());
     } else {
-      values.id = initialValues.id
+      values.id = initialValues.id;
       instituicaoAPI
         .update(values)
         .then(() => {

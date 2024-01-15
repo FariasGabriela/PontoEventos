@@ -23,7 +23,10 @@ import InstituicaoModel from "../../model/instituicao";
 import moment from "moment";
 import dayjs from "dayjs";
 
-export default function CadastroEavento() {
+/**
+ * Tela de cadastro de evento
+ */
+export default function CadastroEvento() {
   const eventoAPI = new EventoAPI();
   const instituicaoAPI = new InstituicaoAPI();
   const [instituicaoList, setInstituicaoList] = useState<InstituicaoModel[]>(
@@ -68,8 +71,8 @@ export default function CadastroEavento() {
     eventoAPI.findById(id || "").then((result: any) => {
       const dataAux = result.data;
       setInitialValues(dataAux);
-      setDataInicial(dayjs(dataAux.dataInicial))
-      setDataFinal(dayjs(dataAux.dataFinal))
+      setDataInicial(dayjs(dataAux.dataInicial));
+      setDataFinal(dayjs(dataAux.dataFinal));
       setAtivo(dataAux.ativo);
 
       setFieldValue("name", dataAux.name);

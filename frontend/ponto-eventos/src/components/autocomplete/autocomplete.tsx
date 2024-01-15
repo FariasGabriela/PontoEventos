@@ -12,6 +12,9 @@ interface AutoCompleteProps {
   error: boolean;
 }
 
+/**
+ * Componente de auto complete
+ */
 export default function AutoCompleteComponente(props: AutoCompleteProps) {
   const { id, value, title, onChange, selectList, helperText, error } = props;
 
@@ -29,7 +32,7 @@ export default function AutoCompleteComponente(props: AutoCompleteProps) {
       renderInput={(params) => (
         <TextField
           {...params}
-         // onBlur={onChange}
+          // onBlur={onChange}
           variant="standard"
           helperText={helperText}
           error={error}

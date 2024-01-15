@@ -1,10 +1,13 @@
 import { Typography, AppBar, Toolbar } from "@mui/material";
-import './appbar.css'
+import "./appbar.css";
 
 interface AppBarProps {
   title: string;
 }
 
+/**
+ * Componte que representa a barra no topo da aplicação
+ */
 export default function AppBarComponent(props: AppBarProps) {
   const { title } = props;
 
@@ -17,9 +20,8 @@ export default function AppBarComponent(props: AppBarProps) {
         position: "relative",
         borderBottom: (t) => `1px solid ${t.palette.divider}`,
       }}
-     
     >
-      <Toolbar >
+      <Toolbar>
         <Typography variant="h6" color="inherit" noWrap>
           {title}
         </Typography>

@@ -9,6 +9,9 @@ interface SelectProps {
   error: boolean;
 }
 
+/**
+ * Componente de texto
+ */
 export default function TextFieldComponent(props: SelectProps) {
   const { id, value, title, onChange, helperText, error } = props;
 

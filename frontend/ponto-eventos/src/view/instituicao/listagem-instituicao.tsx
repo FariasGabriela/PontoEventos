@@ -8,6 +8,9 @@ import { useNavigate } from "react-router-dom";
 import selectTipoList from "./utils/TipoInstituicaoModel";
 import CardComponent from "../../components/card/card";
 
+/**
+ * Colunas da grid de insituição
+ */
 const columns: GridColDef[] = [
   {
     field: "name",
@@ -30,6 +33,9 @@ const columns: GridColDef[] = [
   },
 ];
 
+/**
+ * Listagem de instituição
+ */
 export default function ListagemInstituicao() {
   let history = useNavigate();
   const instituicaoAPI = new InstituicaoAPI();

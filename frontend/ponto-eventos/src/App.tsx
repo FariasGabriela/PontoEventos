@@ -15,7 +15,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <div style={{ backgroundColor: "#005c46", height: '100vh' }}>
+        <div style={{ backgroundColor: "#005c46", height: "100vh" }}>
           <AppBarComponent title="Ponto Eventos" />
           <Routes>
             <Route path="/" index element={<Home />} />

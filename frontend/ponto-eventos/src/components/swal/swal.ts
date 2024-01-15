@@ -1,5 +1,8 @@
 import Swal from "sweetalert2";
 
+/**
+ * Pop-up de sucesso
+ */
 function SwalSucess() {
   Swal.fire({
     title: "Sucesso",
@@ -9,15 +12,9 @@ function SwalSucess() {
   });
 }
 
-function SwalErrorLoading() {
-    Swal.fire({
-      title: "Ocorreu um erro ao buscar dados",
-      text: "Recarregue a pagina",
-      icon: "error",
-      confirmButtonText: "Ok",
-    });
-  }
-
+/**
+ * Pop-up de erro
+ */
 function SwalError() {
   Swal.fire({
     title: "Ocorreu um erro ao salvar",
@@ -27,6 +24,9 @@ function SwalError() {
   });
 }
 
+/**
+ * Pop-up de opções
+ */
 function SwalOptions(title: string) {
   return Swal.fire({
     title: title,
@@ -36,12 +36,18 @@ function SwalOptions(title: string) {
   });
 }
 
+/**
+ * Pop-up com carregando
+ */
 function SwalLoading() {
   Swal.showLoading();
 }
 
+/**
+ * Fechar pop-up
+ */
 function SwalClose() {
   Swal.close();
 }
 
-export { SwalSucess, SwalError, SwalLoading, SwalOptions, SwalErrorLoading, SwalClose };
+export { SwalSucess, SwalError, SwalLoading, SwalOptions, SwalClose };

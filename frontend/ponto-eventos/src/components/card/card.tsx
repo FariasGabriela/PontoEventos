@@ -7,7 +7,10 @@ interface PaperProps {
   children: JSX.Element;
 }
 
-export default function PaperComponent(props: PaperProps) {
+/**
+ * Componente de card
+ */
+export default function CardComponent(props: PaperProps) {
   const { title } = props;
   return (
     <Container

@@ -10,6 +10,9 @@ interface DatePickerProps {
   minDate?: string | number | Date | Object;
 }
 
+/**
+ * Componente de data com calendario
+ */
 export default function DatePickerComponent(props: DatePickerProps) {
   const { value, title, onChange, helperText, error, maxDate, minDate } = props;
 
@@ -24,7 +27,7 @@ export default function DatePickerComponent(props: DatePickerProps) {
         textField: {
           helperText: helperText,
           error: error,
-          variant: "standard"
+          variant: "standard",
         },
       }}
     />

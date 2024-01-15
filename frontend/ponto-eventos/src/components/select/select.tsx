@@ -18,7 +18,10 @@ interface SelectProps {
   error: boolean;
 }
 
-export default function SelectComponent(props: SelectProps) : JSX.Element {
+/**
+ * Componente de select
+ */
+export default function SelectComponent(props: SelectProps): JSX.Element {
   const { id, value, title, onChange, selectList, helperText, error } = props;
 
   return (
@@ -28,7 +31,9 @@ export default function SelectComponent(props: SelectProps) : JSX.Element {
       </InputLabel>
       <Select id={id} value={value} onChange={onChange} variant="standard">
         {selectList.map((item) => (
-          <MenuItem key={item.sigla} value={item.sigla}>{item.descricao}</MenuItem>
+          <MenuItem key={item.sigla} value={item.sigla}>
+            {item.descricao}
+          </MenuItem>
         ))}
       </Select>
 

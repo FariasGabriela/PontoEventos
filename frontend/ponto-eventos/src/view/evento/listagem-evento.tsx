@@ -8,6 +8,9 @@ import { useNavigate } from "react-router-dom";
 import moment from "moment";
 import CardComponent from "../../components/card/card";
 
+/**
+ * Colunas da grid de evento
+ */
 const columns: GridColDef[] = [
   {
     field: "name",

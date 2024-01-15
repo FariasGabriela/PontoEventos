@@ -14,9 +14,9 @@ Ponto Eventos é sua plataforma de cadastro de eventos
 **Projeto backend**
 - ``` cd backend/ponto-eventos ```
 - ``` mvn clean compile install ```
-- ``` mvn quarkus:dev -DURL_POSTGRES={link_do_postgres_local} ```
+- ``` mvn quarkus:dev -DURL_POSTGRES={link_do_postgres_local} -DUSERNAME_POSTGRES={nome_do_usuario_no_banco} -DPASSWORD_POSTGRES={senha_do_banco} ```
 
-* **link_do_postgres_local**: por default está cadastrado *jdbc:postgresql://localhost:5432/pontoeventos*, caso a porta do banco seja 5432 pode executar apenas *mvn quarkus:dev*, caso a porta ou a URL seja diferente, é necessário passar por parametro a nova porta, ex: *mvn quarkus:dev -DURL_POSTGRES=jdbc:postgresql://localhost:5432/pontoeventos*
+* **link_do_postgres_local**: por default está cadastrado *jdbc:postgresql://localhost:5432/pontoeventos*, caso a porta do banco seja 5432 e o username e password seja postgres pode executar apenas *mvn quarkus:dev*, caso a porta, URL ou usuario e senha seja diferente, é necessário passar por parametro a nova porta, ex: *mvn quarkus:dev -DURL_POSTGRES=jdbc:postgresql://localhost:5432/pontoeventos -DUSERNAME_POSTGRES=postgres -DPASSWORD_POSTGRES=postgres*
 
 Com essas configurações o frontend estará rodando
 **Projeto frontend**

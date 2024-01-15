@@ -123,9 +123,9 @@ export default function CadastroEvento() {
                 }}
                 maxDate={dataFinal || undefined}
                 value={dataInicial}
-                error={errors.dataInicial && dataInicial == null ? true : false}
+                error={errors.dataInicial && touched.dataInicial ? true : false}
                 helperText={
-                  errors.dataInicial && dataInicial == null
+                  errors.dataInicial && touched.dataInicial
                     ? errors.dataInicial
                     : ""
                 }
@@ -140,9 +140,9 @@ export default function CadastroEvento() {
                 }}
                 minDate={dataInicial || undefined}
                 value={dataFinal}
-                error={errors.dataFinal && dataFinal == null ? true : false}
+                error={errors.dataFinal && touched.dataFinal ? true : false}
                 helperText={
-                  errors.dataFinal && dataFinal == null ? errors.dataFinal : ""
+                  errors.dataFinal && touched.dataFinal ? errors.dataFinal : ""
                 }
               />
 

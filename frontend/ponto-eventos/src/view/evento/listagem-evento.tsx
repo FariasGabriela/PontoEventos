@@ -15,25 +15,16 @@ const columns: GridColDef[] = [
   {
     field: "name",
     headerName: "Nome",
-    width: 350,
+    width: 150,
     editable: true,
   },
   {
     field: "dataInicial",
     valueGetter: (params) => {
-      return moment(params.row.dataInicial).format("DD/MM/YY");
+      return `${moment(params.row.dataInicial).format("DD/MM/YY")} - ${moment(params.row.dataFinal).format("DD/MM/YY")}` ;
     },
-    headerName: "Data inicial",
-    width: 150,
-    editable: true,
-  },
-  {
-    field: "dataFinal",
-    valueGetter: (params) => {
-      return moment(params.row.dataFinal).format("DD/MM/YY");
-    },
-    headerName: "Data final",
-    width: 150,
+    headerName: "Vigência",
+    width: 200,
     editable: true,
   },
   {
@@ -42,7 +33,7 @@ const columns: GridColDef[] = [
       return params.row.ativo ? "Ativo" : "Inativo";
     },
     headerName: "Situação",
-    width: 150,
+    width: 100,
     editable: true,
   },
   {

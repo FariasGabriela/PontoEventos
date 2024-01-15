@@ -18,7 +18,8 @@ Ponto Eventos é sua plataforma de cadastro de eventos
 
 * **link_do_postgres_local**: por default está cadastrado *jdbc:postgresql://localhost:5432/pontoeventos*, caso a porta do banco seja 5432 e o username e password seja postgres pode executar apenas *mvn quarkus:dev*, caso a porta, URL ou usuario e senha seja diferente, é necessário passar por parametro a configuração do banco, ex: *mvn quarkus:dev -DURL_POSTGRES=jdbc:postgresql://localhost:5432/pontoeventos -DUSERNAME_POSTGRES=postgres -DPASSWORD_POSTGRES=postgres*
 
-Com essas configurações o frontend estará rodando
+Com essas configurações o backend estará rodando
+
 **Projeto frontend**
 - ``` cd frontend/ponto-eventos ```
 - ``` npm install ```
@@ -63,7 +64,7 @@ Ex:
 ```
 Esse exemplo define que o método vai ser executado as 10:15 todo dia, é possivel trocar o segundo parâmetro (15) para os minutos pretendidos e o terceiro parâmetro (10) para a hora pretendida.
 
-**O frontend não permite enviar campos em branco ou com valores não correspondentes e datas inválidas, com data de inicial maior que data final, por exemplo, caso queira fazer alguns testes com relação a isso, existe um postman para testar validações que o frontend não possibilita, pois existem essas validações no backend também**
+**O frontend não permite enviar data inicial maior que data final, caso queira fazer alguns testes com relação a isso, existe um postman para testar validações que o frontend não possibilita, o backend também contém validações de data**
 
 ---
 
